@@ -7,7 +7,7 @@ public class ThemPark {
         MoneyCollector moneyCollector = new MoneyCollector();
         showGames(game, visitorsRegistration, operators, moneyCollector);
     }
-
+    //hello
     public static void showGames(Game game, VisitorsRegistration visitorsRegistration, Operators operators, MoneyCollector moneyCollector) {
         System.out.println();
         Game selectedGame = null;
