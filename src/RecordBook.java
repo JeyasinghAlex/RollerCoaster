@@ -1,4 +1,5 @@
 public class RecordBook {
+
     private int perDayRound;
     private int rollerCoasterSeat;
     private int perDayEarning;

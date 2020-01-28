@@ -1,13 +1,19 @@
+import java.util.ArrayList;
+
 public class ThemPark {
+
     public static void main(String[] args) {
+
         System.out.println("-------------------------Welcome to Them Park---------------------");
-        Game game = new Game();
+        //Game game = new Game();
         VisitorsRegistration visitorsRegistration = new VisitorsRegistration();
         Operators operators = new Operators();
         MoneyCollector moneyCollector = new MoneyCollector();
+        ArrayList<Game> gameArrayList = new ArrayList<>();
+        gameArrayList.add();
         showGames(game, visitorsRegistration, operators, moneyCollector);
     }
-    //hello
+
     public static void showGames(Game game, VisitorsRegistration visitorsRegistration, Operators operators, MoneyCollector moneyCollector) {
         System.out.println();
         Game selectedGame = null;
@@ -16,7 +22,7 @@ public class ThemPark {
         System.out.print("Enter your selection - ");
         int selectGameOption = ThemParkUtil.getInstance().checkAndReturnValidInput();
         if (selectGameOption == 1){
-            int seat = operators.accessRollerCoaster();
+            int seat = operators.accessGame();
             selectedGame  = game.getInstance("Roller Coaster", seat);
         }
         visitorsRegistration.newRegistration();

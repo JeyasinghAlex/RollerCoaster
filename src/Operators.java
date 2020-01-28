@@ -8,12 +8,11 @@ public class Operators {
     public void setRound(int round) {
         this.round = round;
     }
-
     public int getRound() {
         return this.round;
     }
 
-    public int accessRollerCoaster() {
+    public int accessGame() {
         System.out.println();
         Scanner scan = new Scanner(System.in);
         System.out.println("-------------------------Welcome to Roller Coasters--------------------");
