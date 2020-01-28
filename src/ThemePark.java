@@ -1,14 +1,16 @@
-public class ThemPark {
+public class ThemePark {
     public static void main(String[] args) {
-        System.out.println("-------------------------Welcome to Them Park---------------------");
+        System.out.println("#------------------------------------------------------#");
+        System.out.println("#                      Theme Park                      #");
+        System.out.println("#------------------------------------------------------#");
         Game game = new Game();
+        Operator operator = new Operator();
         VisitorsRegistration visitorsRegistration = new VisitorsRegistration();
-        Operators operators = new Operators();
         MoneyCollector moneyCollector = new MoneyCollector();
-        showGames(game, visitorsRegistration, operators, moneyCollector);
+        showGames(game, visitorsRegistration, operator, moneyCollector);
     }
-    //hello
-    public static void showGames(Game game, VisitorsRegistration visitorsRegistration, Operators operators, MoneyCollector moneyCollector) {
+
+    public static void showGames(Game game, VisitorsRegistration visitorsRegistration, Operator operators, MoneyCollector moneyCollector) {
         System.out.println();
         Game selectedGame = null;
         System.out.println("1) Roller Coaster");

@@ -1,16 +1,28 @@
-public class RecordBook {
-    private int perDayRound;
-    private int rollerCoasterSeat;
-    private int perDayEarning;
+import java.util.ArrayList;
 
-    public RecordBook(int perDayRound, int rollerCoasterSeat, int perDayEarning) {
-        this.perDayRound = perDayRound;
-        this.rollerCoasterSeat = rollerCoasterSeat;
-        this.perDayEarning = perDayEarning;
+public class RecordBook {
+    private static class Record {
+        private int numberOfRoundsOperated;
+        private int numberOfSeatsFilled;
+        private int totalAmountEarned;
+
+        private Record(int numberOfRounds, int numberOfSeats, int amountEarned){
+            this.numberOfRoundsOperated = numberOfRounds;
+            this.numberOfSeatsFilled = numberOfSeats;
+            this.totalAmountEarned= amountEarned;
+        }
     }
 
-    @Override
-    public String toString() {
-        return " perDayRound = " + perDayRound + ", rollerCoasterSeat = " + rollerCoasterSeat + ", perDayEarning = " + perDayEarning ;
+    ArrayList<Record> records;
+
+    public RecordBook() {
+    }
+
+    public void addRecordInRecordBook(int numberOfRounds, int numberOfSeats, int amountEarned){
+        records.add(new Record(numberOfRounds, numberOfSeats, amountEarned));
+    }
+
+    public ArrayList<Record> getRecords(){
+        return records;
     }
 }
