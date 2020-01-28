@@ -18,8 +18,7 @@ public class Main {
         System.out.println("\n***Admin logged in successfully***\n");
 
         Admin admin = new Admin();
-        admin.themePark.setAvailableGames();
-        admin.themePark.assignOperatorForGames(admin.themePark.getAvailableGameList());
+        admin.themePark.setGameAndAssignOperator();
         printAssignedDetails(admin);
 
     }
