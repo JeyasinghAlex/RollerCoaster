@@ -1,3 +1,5 @@
+package algorithm;
+
 public interface QueueInterface {
 
         //All method default public  & abstract

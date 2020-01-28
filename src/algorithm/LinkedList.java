@@ -1,3 +1,5 @@
+package algorithm;
+
 public class LinkedList {
     private Node tailNode;
     private Node headNode;
