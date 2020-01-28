@@ -1,3 +1,5 @@
+package Temp;
+
 public class RollerCoasterBuilder {
 
     private int seat;
@@ -13,7 +15,7 @@ public class RollerCoasterBuilder {
         return this;
     }
 
-    public RollerCoaster getRollerCoaster() {
-        return new RollerCoaster(seat, gameName);
-    }
+//    public RollerCoaster getRollerCoaster() {
+//        return new RollerCoaster(seat, gameName);
+//    }
 }

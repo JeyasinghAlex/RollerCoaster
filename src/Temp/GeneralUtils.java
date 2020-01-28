@@ -1,4 +1,9 @@
+package Temp;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 final class GeneralUtils {
@@ -34,6 +39,13 @@ final class GeneralUtils {
             System.out.println("Enter the Correct Value");
             return checkAndReturnValidString();
         }
+    }
+
+    public ArrayList<String> getSpaceSeperatedValues(String str) {
+        List<String> stringArrayList;
+        String[] strings = str.split(" ");
+        stringArrayList = Arrays.asList(strings);
+        return new ArrayList<>(stringArrayList);
     }
 
 

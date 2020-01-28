@@ -1,3 +1,5 @@
+package Temp;
+
 public interface QueueInterface {
 
         //All method default public  & abstract

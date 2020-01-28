@@ -1,3 +1,5 @@
+package Temp;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,9 +16,9 @@ public class VisitorsRegistration {
         int totalVisitor = ThemParkUtil.getInstance().checkAndReturnValidInput();
         queue.enQueue(totalVisitor);
         for (int i = 1; i <= totalVisitor; i++) {
-            System.out.print(i + " Visitor Name - ");
+            System.out.print(i + " Temp.Visitor Name - ");
             String name = scan.nextLine();
-            System.out.print(i + " Visitor Age - ");
+            System.out.print(i + " Temp.Visitor Age - ");
             int age = ThemParkUtil.getInstance().checkAndReturnValidInput();
             System.out.println("Select Gender");
             System.out.println("1) Male");
@@ -40,7 +42,7 @@ public class VisitorsRegistration {
                     break;
             }
         }
-        System.out.println("Visitor is coming back ?");
+        System.out.println("Temp.Visitor is coming back ?");
         System.out.println("1) Yes");
         System.out.println("2) No");
         int option = ThemParkUtil.getInstance().checkAndReturnValidInput();

@@ -1,3 +1,5 @@
+package Temp;
+
 public class Queue implements QueueInterface{
 
     LinkedList linkedList = new LinkedList();

@@ -1,3 +1,5 @@
+package Temp;
+
 public class LinkedList {
     private Node tailNode;
     private Node headNode;
