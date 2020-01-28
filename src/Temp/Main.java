@@ -3,14 +3,9 @@ package Temp;
 import games.Game;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Scanner;
 
 public class Main {
-    public static ArrayList<Game> games =new ArrayList<>();
-    public static HashMap<String,Game> operatorGameMap = new HashMap<>();
-
-
-
     public static void main(String[] args) {
         System.out.println("-----------------------------------------------------------------");
         System.out.println("|                      Welcome to Theme Park                    |");
@@ -20,15 +15,31 @@ public class Main {
         Admin admin = new Admin();
         admin.themePark.setGameAndAssignOperator();
         printAssignedDetails(admin);
+        ArrayList<Game> availableGames = admin.themePark.getAvailableGameList();
+        loginOperator(availableGames);
     }
 
-    private static void printAssignedDetails(Admin admin){
+    private static void printAssignedDetails(Admin admin) {
         System.out.println("-----------------------------------------------");
-        for(int i = 0; i < admin.themePark.getAvailableGameList().size(); i++){
-            Game game  = admin.themePark.getAvailableGameList().get(i);
+        for (int i = 0; i < admin.themePark.getAvailableGameList().size(); i++) {
+            Game game = admin.themePark.getAvailableGameList().get(i);
             System.out.println("Operator " + game.getOperator().getName() + " is assigned for " + game.getName());
         }
         System.out.println("-----------------------------------------------");
+    }
+
+    private static void loginOperator(ArrayList<Game> games) {
+        System.out.println("-----------------------------------------------");
+        System.out.println("Enter operator name to login: ");
+        Scanner scanner = new Scanner(System.in);
+        String operatorName = scanner.nextLine();
+        for (int i = 0; i < games.size(); i++) {
+            if (operatorName.equals(games.get(i).getOperator().getName())) {
+                Game assignedGame = games.get(i);
+                assignedGame.getOperator().operateGame(assignedGame);
+            }
+        }
 
     }
+
 }

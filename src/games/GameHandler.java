@@ -3,17 +3,7 @@ package games;
 import Temp.ThemeParkConstants;
 
 public class GameHandler {
-    public static GameHandler gameHandler = null;
-
-    public static GameHandler getInstance() {
-        if(gameHandler == null){
-            return new GameHandler();
-        } else {
-            return gameHandler;
-        }
-    }
-
-    public Game getGameHandler(String handlerKey) {
+    public static Game getGameHandler(String handlerKey) {
         if(handlerKey == null) {
             return null;
         } else if(handlerKey.equals(ThemeParkConstants.Game.ROLLER_COASTER)) {

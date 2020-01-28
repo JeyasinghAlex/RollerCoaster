@@ -6,7 +6,6 @@ import games.GameHandler;
 import games.RainbowDragon;
 import games.RollerCoaster;
 import operator.Operator;
-import util.GeneralUtils;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -49,12 +48,12 @@ public class ThemePark {
     public void setAvailableGameList(ArrayList<String> ridesList) {
         for (int i = 0; i < ridesList.size(); i++) {
             if (ridesList.get(i).equals("1")) {
-                Game game = GameHandler.getInstance().getGameHandler(ThemeParkConstants.Game.ROLLER_COASTER);
+                Game game = GameHandler.getGameHandler(ThemeParkConstants.Game.ROLLER_COASTER);
                 availableGameList.add(game);
             } else if (ridesList.get(i).equals("2")) {
-                availableGameList.add(GameHandler.getInstance().getGameHandler(ThemeParkConstants.Game.AIR_SHIP));
+                availableGameList.add(GameHandler.getGameHandler(ThemeParkConstants.Game.AIR_SHIP));
             } else if (ridesList.get(i).equals("3")) {
-                availableGameList.add(GameHandler.getInstance().getGameHandler(ThemeParkConstants.Game.RAINBOW_DRAGON));
+                availableGameList.add(GameHandler.getGameHandler(ThemeParkConstants.Game.RAINBOW_DRAGON));
             }
         }
     }
