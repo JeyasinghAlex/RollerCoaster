@@ -1,4 +1,4 @@
-package Temp;
+package algorithm;
 
 public class LinkedList {
     private Node tailNode;

@@ -1,6 +1,6 @@
-package Games;
+package games;
 
-import Temp.Operator;
+import operator.Operator;
 
 public abstract class Game {
     public abstract String getName();

@@ -1,4 +1,4 @@
-package Games;
+package games;
 
 import Temp.ThemeParkConstants;
 

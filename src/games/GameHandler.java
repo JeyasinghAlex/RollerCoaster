@@ -1,10 +1,6 @@
-package Temp;
+package games;
 
-import Games.AirShip;
-import Games.Game;
-import Games.KidsRide;
-import Games.RainbowDragon;
-import Games.RollerCoaster;
+import Temp.ThemeParkConstants;
 
 public class GameHandler {
     public static GameHandler gameHandler = null;

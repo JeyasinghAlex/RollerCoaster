@@ -1,4 +1,4 @@
-package Temp;
+package operator;
 
 public class Operator {
     private String name;

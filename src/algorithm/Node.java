@@ -1,4 +1,4 @@
-package Temp;
+package algorithm;
 
 public class Node {
     int data;
