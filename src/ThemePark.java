@@ -1,28 +1,43 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class ThemePark {
-    public static void main(String[] args) {
-        System.out.println("#------------------------------------------------------#");
-        System.out.println("#                      Theme Park                      #");
-        System.out.println("#------------------------------------------------------#");
-        Game game = new Game();
-        Operator operator = new Operator();
-        VisitorsRegistration visitorsRegistration = new VisitorsRegistration();
-        MoneyCollector moneyCollector = new MoneyCollector();
-        showGames(game, visitorsRegistration, operator, moneyCollector);
+    public static ArrayList<Game> games =new ArrayList<>();
+    public static HashMap<String,Game> visitorNameVsGameAssigned = new HashMap<>();
+
+    public static ArrayList<Operator> availableOperators = new ArrayList<>();
+
+
+    static {
+        availableOperators.add(new Operator("vignesh"));
+        availableOperators.add(new Operator("siva"));
+        availableOperators.add(new Operator("saravana"));
     }
 
-    public static void showGames(Game game, VisitorsRegistration visitorsRegistration, Operator operators, MoneyCollector moneyCollector) {
+
+    static {
+        games.add(new RollerCoaster());
+        games.add(new Colambus());
+    }
+    public static void main(String[] args) {
+        System.out.println("-------------------------Welcome to Them Park---------------------");
+        VisitorsRegistration visitorsRegistration = new VisitorsRegistration();
+        Operator operators = new Operator();
+        MoneyCollector moneyCollector = new MoneyCollector();
+        showGames( visitorsRegistration, operators, moneyCollector);
+    }
+
+
+
+    public static void showGames(VisitorsRegistration visitorsRegistration, Operator operators, MoneyCollector moneyCollector) {
         System.out.println();
         Game selectedGame = null;
-        System.out.println("1) Roller Coaster");
-        System.out.println("2) Columbus ");
-        System.out.print("Enter your selection - ");
-        int selectGameOption = ThemParkUtil.getInstance().checkAndReturnValidInput();
-        if (selectGameOption == 1){
-            int seat = operators.accessRollerCoaster();
-            selectedGame  = game.getInstance("Roller Coaster", seat);
+        for(int i=0;i<games.size();i++){
+            System.out.println("Select "+i+1+"for"+games.get(1).getName());
         }
-        visitorsRegistration.newRegistration();
-        moneyCollector.collectMoney(selectedGame, operators, visitorsRegistration);
-        showGames(game, visitorsRegistration, operators, moneyCollector);
+        int selectGameOption = GeneralUtils.getInstance().checkAndReturnValidInteger();
+        selectedGame = games.get(selectGameOption-1);
+
+
     }
 }
