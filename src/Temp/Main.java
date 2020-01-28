@@ -20,7 +20,6 @@ public class Main {
         Admin admin = new Admin();
         admin.themePark.setGameAndAssignOperator();
         printAssignedDetails(admin);
-
     }
 
     private static void printAssignedDetails(Admin admin){
