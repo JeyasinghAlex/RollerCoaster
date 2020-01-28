@@ -1,13 +1,12 @@
 public class MoneyCollector {
-
     private int earn;
     public  void setEarning(int earn) {
         this.earn = earn;
     }
 
-    public void collectMoney(Game selectedGame, Operators operators, VisitorsRegistration visitorsRegistration) {
+    public void collectMoney(Game selectedGame, Operator operators, VisitorsRegistration visitorsRegistration) {
         Queue queue = visitorsRegistration.queue;
-        int round = operators.getRound();
+        int round = operators.getNumberOfRounds();
         int seat = selectedGame.getSeat();;
         int total = 0;
         int earn = 0;
@@ -34,7 +33,7 @@ public class MoneyCollector {
             total = 0;
         }
         setEarning(earn);
-        operators.recordBookArrayList.add(new RecordBook(round, seat, earn));
+        operators.recordBook.add(new RecordBook(round, seat, earn));
         System.out.println("Total Earning - " + earn);
         System.out.println("If you see rider list ?");
         System.out.println("1) Yes");
