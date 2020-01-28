@@ -1,26 +1,43 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class ThemPark {
+    public static ArrayList<Game> games =new ArrayList<>();
+    public static HashMap<String,Game> visitorNameVsGameAssigned = new HashMap<>();
+
+    public static ArrayList<Operator> availableOperators = new ArrayList<>();
+
+
+    static {
+        availableOperators.add(new Operator("vignesh"));
+        availableOperators.add(new Operator("siva"));
+        availableOperators.add(new Operator("saravana"));
+    }
+
+
+    static {
+        games.add(new RollerCoaster());
+        games.add(new Colambus());
+    }
     public static void main(String[] args) {
         System.out.println("-------------------------Welcome to Them Park---------------------");
-        Game game = new Game();
         VisitorsRegistration visitorsRegistration = new VisitorsRegistration();
-        Operators operators = new Operators();
+        Operator operators = new Operator();
         MoneyCollector moneyCollector = new MoneyCollector();
-        showGames(game, visitorsRegistration, operators, moneyCollector);
+        showGames( visitorsRegistration, operators, moneyCollector);
     }
-    //hello
-    public static void showGames(Game game, VisitorsRegistration visitorsRegistration, Operators operators, MoneyCollector moneyCollector) {
+
+
+
+    public static void showGames(VisitorsRegistration visitorsRegistration, Operator operators, MoneyCollector moneyCollector) {
         System.out.println();
         Game selectedGame = null;
-        System.out.println("1) Roller Coaster");
-        System.out.println("2) Columbus ");
-        System.out.print("Enter your selection - ");
-        int selectGameOption = ThemParkUtil.getInstance().checkAndReturnValidInput();
-        if (selectGameOption == 1){
-            int seat = operators.accessRollerCoaster();
-            selectedGame  = game.getInstance("Roller Coaster", seat);
+        for(int i=0;i<games.size();i++){
+            System.out.println("Select "+i+1+"for"+games.get(1).getName());
         }
-        visitorsRegistration.newRegistration();
-        moneyCollector.collectMoney(selectedGame, operators, visitorsRegistration);
-        showGames(game, visitorsRegistration, operators, moneyCollector);
+        int selectGameOption = GeneralUtils.getInstance().checkAndReturnValidInteger();
+        selectedGame = games.get(selectGameOption-1);
+
+
     }
 }
